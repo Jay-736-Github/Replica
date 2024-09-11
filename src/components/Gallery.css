@@ -1,0 +1,71 @@
+.gallery {
+  background-color: #2f3640;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.gallery-button, .add-image-button, .scroll-button {
+  background-color: #4b6584;
+  color: #ffffff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-button:hover, .add-image-button:hover, .scroll-button:hover {
+  background: linear-gradient(135deg, #3a4a5e, #2a2a2e);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  transform: scale(1.05);
+}
+
+.input-file {
+  display: none;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.scroll-button {
+  background-color: #2a2a2e;
+}
+
+.scroll-button:hover {
+  background: linear-gradient(135deg, #4b4b4d, #2a2a2e);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  transform: scale(1.05);
+}
+
+.images {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.images img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

@@ -1,13 +1,143 @@
-body {
+
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2d3436;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.background-box {
+  background-color: #2f3640;
+  border-radius: 25px;
+  padding: 3vh 3vw;
+  width: 95%;
+  max-width: 1400px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+}
+
+.main-container {
+  display: flex;
+  width: 100%;
+}
+
+.left-section {
+  width: 50%;
+}
+
+.right-section {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Combined Container for Tabs and Intro Content */
+.content-container {
+  background-color: #f0f0f0; /* Light gray background */
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+/* Main Tabs */
+.main-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  background-color: #2a2a2e;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.tab.active {
+  background-color: #4b6584;
+}
+
+/* Intro Content */
+.content h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.content p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Gallery Section */
+.gallery {
+  background-color: #1c1c1e;
+  border-radius: 15px;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gallery-images {
+  display: flex;
+  gap: 15px;
+}
+
+.gallery-image {
+  width: 120px;
+  height: 120px;
+  background-color: #ffffff;
+  border-radius: 12px;
+}
+
+.add-image {
+  background-color: #2a2a2e;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.arrow-button {
+  background-color: #2a2a2e;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .left-section {
+    display: none;
+  }
+
+  .right-section {
+    width: 100%;
+  }
+
+  .gallery-images {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .gallery-image {
+    width: 100%;
+    height: auto;
+  }
 }

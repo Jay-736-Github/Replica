@@ -1,38 +1,235 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2d3436;
+  margin: 0;
+  padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.background-box {
+  background-color: #2f3640;
+  border-radius: 25px;
+  padding: 0; /* Removed padding */
+  width: 95%;
+  max-width: 1400px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+}
+
+.main-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 0; /* Removed padding */
+}
+
+.left-section {
+  width: 50%;
+}
+
+.right-section {
+  width: 50%;
   display: flex;
   flex-direction: column;
+  gap: 40px;
+}
+
+.content-container {
+  background-color: #2f3640; /* Ensuring background color matches */
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.tab-container {
+  background-color: #2f3640;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab {
+  background-color: #2a2a2e;
+  color: #ffffff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 12px;
+  cursor: pointer;
+  flex: 1;
+  margin-right: 15px;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.tab:last-child {
+  margin-right: 0;
+}
+
+.tab:hover {
+  background: linear-gradient(135deg, #4b4b4d, #2a2a2e);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05);
+}
+
+.tab.active {
+  background-color: #444444;
+}
+
+.tab-content {
+  margin-top: 20px;
+  color: #ffffff;
+  font-size: 22px;
+  font-family: "Arial", sans-serif;
+}
+
+.content p {
+  font-size: 16px; /* Slightly smaller for readability */
+  line-height: 1.5; /* Improved readability */
+  font-family: 'Roboto', Arial, sans-serif; /* Modern and clean font */
+  color: #f5f5f5; /* Lighter text color for better contrast */
+  text-align: justify; /* Justify text for a cleaner look */
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
+}
+
+
+h1 {
+  font-size: 36px;
+}
+
+.gallery-container {
+  background-color: #2f3640; /* Updated background color */
+  border-radius: 15px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-buttons {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 20px; /* Adjusted for proper spacing */
 }
 
-.App-link {
-  color: #61dafb;
+.gallery-button, .add-image-button, .scroll-button {
+  background-color: #2a2a2e;
+  color: #ffffff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.gallery-button:hover, .add-image-button:hover, .scroll-button:hover {
+  background: linear-gradient(135deg, #4b4b4d, #2a2a2e);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05);
+}
+
+.input-file {
+  display: none;
+}
+
+.scroll-button {
+  background-color: #2a2a2e;
+}
+
+.images {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.images img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+@media (min-width: 1600px) {
+  .background-box {
+    padding: 4vh 4vw;
+    width: 80%;
+    max-width: 1800px;
+    min-height: 90vh;
   }
-  to {
-    transform: rotate(360deg);
+
+  .tab {
+    padding: 25px 40px;
+    font-size: 22px;
+  }
+
+  .tab-content {
+    font-size: 24px;
+  }
+
+  .gallery-container {
+    padding: 50px;
+  }
+
+  .gallery-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .add-image {
+    padding: 20px 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .left-section {
+    display: none;
+  }
+
+  .right-section {
+    width: 100%;
+  }
+
+  .tab {
+    padding: 10px 15px;
+  }
+
+  .gallery-images {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .gallery-image {
+    width: 100%;
+    height: auto;
   }
 }
